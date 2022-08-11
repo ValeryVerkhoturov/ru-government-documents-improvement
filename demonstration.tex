@@ -17,6 +17,7 @@
 
 \usepackage{pdfpages}
 
+\usepackage{hyperref}
 \begin{document}
 
 \pagestyle{empty}
@@ -25,14 +26,14 @@
 	\Huge
 	\vspace*\fill Оригинальный документ \vspace*\fill
 	\newpage
-	\vspace*\fill Документ мог бы выглядеть \vspace*\fill
+	\vspace*\fill Документ мог бы выглядеть\vspace*\fill
 \end{center}
 
 	
-\foreach \n in {1,2,3,4,5,6,7}{
+\foreach \n in {1,2,3,4,5,6}{
 	\includepdf[pages=\n, frame]{original.pdf}
 	\includepdf[pages=\n, frame]{main.pdf}
 }
-%\includepdf[pages=7, frame]{original.pdf}
+\includepdf[pages=7, frame]{original.pdf}
 
 \end{document}
