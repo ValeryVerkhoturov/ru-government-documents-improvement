@@ -36,12 +36,10 @@
 \fancyhead[C]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
-\usepackage[norule]{footmisc}
-
 \usepackage{xfakebold}
 
 \makeatletter
-\AddEnumerateCounter{\asbuk}{\russian@alph}{щ}
+\AddEnumerateCounter{\asbuk}{\russian@alph}
 \makeatother
 
 \usepackage{pst-barcode}
@@ -50,36 +48,43 @@
 \usepackage[xetex]{hyperref}
 \hypersetup{pdftitle={Указ Президента Росийской Федерации}, pdfproducer={-}, pdfcreator={-}, pdfcreationdate={-}}
 
-\begin{document}
-
-\let\thefootnote\relax\footnote{
-	\noindent\centering \hspace*{-.8cm}
-	%\psframebox{
-	\begin{pspicture}(33mm, 24.5mm)
-		\psbarcode{2100052974545}{includetext textfont=Times-Roman}{ean13}
-	\end{pspicture}
-	%}
+\fancypagestyle{firststyle}{
+	\fancyhf{}
+	\setlength{\footskip}{75pt}
+	\fancyfoot[C]{
+		%\psframebox{
+		\begin{pspicture}(31mm, 24.5mm)
+			\psbarcode{2100052974545}{includetext textfont=Times-Roman}{ean13}
+		\end{pspicture}
+		%}
+	}
 }
 
-\begin{center}
-	\thispagestyle{empty}
+\begin{document}
 
-	\setBold[.4]
+\begin{center}
+	\thispagestyle{firststyle}
+
+	\setBold[.5]
 	
 	\vspace*{-1cm}
 	\includegraphics[width=2.5cm]{./emblem_black_bordered} \medskip
 	
 	\huge{У}\Large{\,К\,А\,З} \\\medskip
-	\Large{\,П}\normalsize \,Р\,Е\,З\,И\,Д\,Е\,Н\,Т\,А\, \Large{\,Р}\normalsize  \,О\,С\,С\,И\,Й\,С\,К\,О\,Й \Large{\,Ф}\normalsize \,Е\,Д\,Е\,Р\,А\,Ц\,И\,И \bigskip
+	\Large{\,П}\normalsize \,Р\,Е\,З\,И\,Д\,Е\,Н\,Т\,А\, 
+	\Large{\,Р}\normalsize \,О\,С\,С\,И\,Й\,С\,К\,О\,Й 
+	\Large{\,Ф}\normalsize \,Е\,Д\,Е\,Р\,А\,Ц\,И\,И 
+	\bigskip
+	\unsetBold
 	
 	\begin{minipage}{.95\textwidth}
-		\setBold[.2]
+		\bfseries
 		\centering\normalsize
-		\itshape О~внесении изменений в~Положение о~премии Президента Российской Федерации в~области науки и~инноваций для~молодых учёных, утверждённое Указом Президента Российской Федерации от~18~июня~2015~г.~\textnumero~312, и~Положение о~Государственной премии Российской Федерации в~области науки и~технологий, утверждённое Указом Президента Российской Федерации от~28~сентября~2015~г.~\textnumero~485
+		О~внесении изменений в~\emph{Положение о~премии Президента Российской Федерации в~области науки и~инноваций для~молодых учёных}, утверждённое Указом Президента Российской Федерации от~18~июня~2015~г.~\textnumero~312, и~\emph{Положение о~Государственной премии Российской Федерации в~области науки и~технологий}, утверждённое Указом Президента Российской Федерации от~28~сентября~2015~г.~\textnumero~485
+		\unsetBold
 	\end{minipage}
 	\bigskip
-
-	\unsetBold
+	
 \end{center}
 
 
@@ -162,7 +167,7 @@
 		
 		\item абзац третий пункта 26 изложить в~следующей редакции:
 		
-		\sloppy \say{Государственные премии за~научные исследования и разработки, содержащие сведения, составляющие государственную тайну, и (или) иную информацию ограниченного доступа, вручаются в~торжественной обстановке при условии соблюдения требований законодательства Российской Федерации, регламентирующего вопросы защиты информации.}.
+		\say{Государственные премии за~научные исследования и разработки, содержащие сведения, составляющие государственную тайну, и (или) иную информацию ограниченного доступа, вручаются в~торжественной обстановке при условии соблюдения требований законодательства Российской Федерации, регламентирующего вопросы защиты информации.}.
 	\end{enumerate}
 
 	\item Настоящий Указ вступает в~силу со~дня его подписания.
@@ -175,7 +180,7 @@
 	\centering \strut
 	Президент \\ Российской Федерации
 \end{minipage}
-\begin{minipage}{.1\textheight}
+\begin{minipage}{.1\textwidth}
 	\strut \\ В.~Ппппп
 \end{minipage}  
 \bigskip \\
