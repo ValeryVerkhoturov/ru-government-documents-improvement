@@ -48,9 +48,10 @@
 \usepackage[xetex]{hyperref}
 \hypersetup{pdftitle={Указ Президента Росийской Федерации}, pdfproducer={-}, pdfcreator={-}, pdfcreationdate={-}}
 
-\fancypagestyle{firststyle}{
+\fancypagestyle{endstyle}{
 	\fancyhf{}
 	\setlength{\footskip}{75pt}
+	\fancyhead[C]{\thepage}
 	\fancyfoot[C]{
 		%\psframebox{
 		\begin{pspicture}(31mm, 24.5mm)
@@ -63,7 +64,7 @@
 \begin{document}
 
 \begin{center}
-	\thispagestyle{firststyle}
+	\thispagestyle{empty}
 
 	\setBold[.5]
 	
@@ -187,6 +188,8 @@
 Москва, Кремль \\
 16~мая~2022~года \\
 \textnumero~289\nopagebreak[4]
+
+\thispagestyle{endstyle}
 
 
 \end{document}
