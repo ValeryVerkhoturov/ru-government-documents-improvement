@@ -2,86 +2,16 @@
 % !TeX spellcheck = russian-aot
 % !TeX program = xelatex
 
-\documentclass[12pt, a4paper]{article}
+\documentclass{president-decree}
 
-\usepackage[english, main=russian]{babel}
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
+\usepackage{hyperref}
+\usepackage{dirtytalk}
+\providecommand*{\asbuk}{}
 
-\usepackage{microtype}
-
-\usepackage[a4paper, left=40mm, right=40mm, top=40mm, bottom=40mm]{geometry}
-
-\setlength{\parindent}{1.25cm}
-\setlength{\parskip}{0pt}
-
-
-\righthyphenmin=2
-
-\setlength{\headheight}{15.5pt}
-
-\usepackage{indentfirst}
-
-\usepackage{graphicx}
-
-\usepackage{enumitem}
-\setlist{wide}
-
-\usepackage[left={<<}, right={>>}, leftsub={„}, rightsub={“}]{dirtytalk}
-
-
-\usepackage{fancyhdr}
-\fancyhf{}
-\pagestyle{fancy}
-\fancyhead[C]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-
-\usepackage{xfakebold}
-
-\makeatletter
-\AddEnumerateCounter{\asbuk}{\russian@alph}
-\makeatother
-
-\usepackage{pst-barcode}
-
-
-\usepackage[xetex]{hyperref}
-\hypersetup{pdftitle={Указ Президента Росийской Федерации}, pdfproducer={-}, pdfcreator={-}, pdfcreationdate={-}}
-
-\fancypagestyle{endstyle}{
-	\fancyhf{}
-	\setlength{\footskip}{75pt}
-	\fancyhead[C]{\thepage}
-	\fancyfoot[C]{
-		%\psframebox{
-		\begin{pspicture}(31mm, 24.5mm)
-			\psbarcode{2100052974545}{includetext textfont=Times-Roman}{ean13}
-		\end{pspicture}
-		%}
-	}
-}
 
 \begin{document}
 
-\begin{center}
-	\thispagestyle{empty}
-	
-	\vspace*{-40mm}
-	\vspace*{10mm}
-	
-	\includegraphics[width=3cm]{../emblem_black_bordered.pdf} \medskip
-	
-	\bfseries
-	
-	\huge УКАЗ
-	\\
-	\large ПРЕЗИДЕНТА РОССИЙСКОЙ ФЕДЕРАЦИИ
-	\vspace*{12pt}
-	
-	\normalsize
-	О~внесении изменений в~\emph{Положение о~премии Президента Российской Федерации в~области науки и~инноваций для~молодых учёных}, утверждённое Указом Президента Российской Федерации от~18~июня~2015~г.~\textnumero~312, и~\emph{Положение о~Государственной премии Российской Федерации в~области науки и~технологий}, утверждённое Указом Президента Российской Федерации от~28~сентября~2015~г.~\textnumero~485
-	
-\end{center}
+\maketitle{О~внесении изменений в~\emph{Положение о~премии Президента Российской Федерации в~области науки и~инноваций для~молодых учёных}, утверждённое Указом Президента Российской Федерации от~18~июня~2015~г.~\textnumero~312, и~\emph{Положение о~Государственной премии Российской Федерации в~области науки и~технологий}, утверждённое Указом Президента Российской Федерации от~28~сентября~2015~г.~\textnumero~485}
 
 
 \begin{enumerate}
@@ -169,21 +99,7 @@
 	\item Настоящий Указ вступает в~силу со~дня его подписания.
 \end{enumerate}
 
-
-{
-	\filbreak
-	\vspace*{3cm}
-	\raggedleft
-	\begin{tabular}{cc}
-		Президент & \\
-		Российской Федерации & В.~Ппппп
-	\end{tabular} \smallskip\\
-	\raggedright
-	Москва, Кремль \\
-	16~мая 2022~г. \\
-	\textnumero~289
-}
-
+\makefoot{В.~Ппппп}{16}{мая}{2022}{289}
 \thispagestyle{endstyle}
 
 
