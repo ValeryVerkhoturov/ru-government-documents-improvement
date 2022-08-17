@@ -46,16 +46,13 @@
 \RequirePackage{pst-barcode}
 
 
-
-
-
-
-
 \RequirePackage[xetex]{hyperref}
 \hypersetup{pdftitle={Указ Президента Росийской Федерации}, pdfproducer={-}, pdfcreator={-}, pdfcreationdate={-}}
 
 
-\newcommand{\bdecree}[1]{
+\newcommand*{\bigls}[1]{{\addfontfeature{LetterSpace=10}#1}}
+
+\newcommand{\decree}[1]{
 	\begin{center}
 		\thispagestyle{empty}
 		
@@ -117,7 +114,7 @@
 }
 
 
-\newcommand*{\baddition}[3]{
+\newcommand*{\addition}[3]{
 	\clearpage
 	\pagestyle{empty}
 	\begin{flushright}
