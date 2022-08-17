@@ -45,19 +45,6 @@
 
 \RequirePackage{pst-barcode}
 
-\fancypagestyle{endstyle}{
-	\fancyhf{}
-	\setlength{\footskip}{75pt}
-	\fancyhead[C]{\thepage}
-	\fancyfoot[C]{
-		%\psframebox{
-			\begin{pspicture}(31mm, 24.5mm)
-				\psbarcode{2100052974545}{includetext textfont=Times-Roman}{ean13}
-			\end{pspicture}
-		%}
-	}
-}
-
 
 
 
@@ -68,14 +55,14 @@
 \hypersetup{pdftitle={Указ Президента Росийской Федерации}, pdfproducer={-}, pdfcreator={-}, pdfcreationdate={-}}
 
 
-\renewcommand*{\maketitle}[1]{
+\newcommand{\bdecree}[1]{
 	\begin{center}
 		\thispagestyle{empty}
 		
 		\vspace*{-40mm}
 		\vspace*{10mm}
 		
-		\includegraphics[width=3cm]{../emblem_black_bordered.pdf} \medskip
+		\includegraphics[width=3cm]{../../emblem_black_bordered.pdf} \medskip
 		
 		\bfseries
 		
@@ -89,18 +76,70 @@
 	\end{center}
 }
 
-% {Name}{Day}{Month}{Year}{Document number}
-\newcommand{\makefoot}[5]{
+% {Name}{Day}{Month}{Year}{Document number}{barcode}
+\newcommand{\edecree}[6]{
+	\makeatletter
+		\newcommand*{\@day}{#2}
+		\newcommand*{\@month}{#3}
+		\newcommand{\@year}{#4}
+		\newcommand*{\@documentnumber}{#5}
+	\makeatother
+	
 	\filbreak
 	\vspace*{3cm}
-	\raggedleft
-	\begin{tabular}{cc}
-		Президент & \\
-		Российской Федерации & #1
-	\end{tabular} \smallskip\\
-	\raggedright
-	Москва, Кремль \\
-	#2~#3 #4~г. \\
-	\textnumero~#5
+	{
+		\raggedleft
+		\begin{tabular}{cc}
+			Президент & \\
+			Российской Федерации & #1
+		\end{tabular} \smallskip\\
+	}
+	{	
+		\raggedright
+		Москва, Кремль \\
+		#2~#3 #4~г. \\
+		\textnumero~#5
+	}
+	\fancypagestyle{endstyle}{
+		\fancyhf{}
+		\setlength{\footskip}{75pt}
+		\fancyhead[C]{\thepage}
+		\fancyfoot[C]{
+			%\psframebox{
+			\begin{pspicture}(31mm, 24.5mm)
+				\psbarcode{#6}{includetext textfont=Times-Roman}{ean13}
+			\end{pspicture}
+			%}
+		}
+	}
+	\thispagestyle{endstyle}
+	\clearpage
+}
+
+
+\newcommand*{\baddition}[2]{
+	\clearpage
+	\pagestyle{empty}
+	\begin{flushright}
+		\begin{tabular}{c}
+			УТВЕРЖДЕНО \vspace*{5pt}\\
+			Указом Президента \\ 
+			Российской Федерации \\
+			\makeatletter
+			от~\@day~\@month{} \@year~г. \textnumero~\@documentnumber \\
+			\makeatother
+		\end{tabular}
+	\end{flushright}
+	\begin{center}
+		\bfseries \MakeUppercase{#1} \\ #2
+	\end{center}
+	\par
+}
+
+\newcommand{\eaddition}{
+	\begin{center}
+		\rule{25mm}{0.4pt}
+	\end{center}
+	\clearpage
 }
 
